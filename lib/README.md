@@ -7,3 +7,4 @@ TO DO
 
 3. Convert nested callback to use async instead, to make the program compact.
 
+4. Handle the Media Playlist and Media Segment files, to be absolute locations instead of relative.
