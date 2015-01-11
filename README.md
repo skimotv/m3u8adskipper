@@ -8,13 +8,13 @@ Usage
 
 It is super simple to use.
 
-First download the m3u8 playlist using the m3u8downloader
+Use the m3u8downoader to download the m3u8 playlist, if the content is not available locally.
 
-using the following
+Then you could use the following snippet to Transmux content, skipping ads automatically.
 
 ```javascript
 'use strict';
-var m3u8adskipper = require('./');
+var m3u8adskipper = require('m3u8adskipper');
 var skipper = new m3u8adskipper('./adestination/m3u8absolute/index.m3u8', 'output.mp4');
 
 skipper.run(function(err)
