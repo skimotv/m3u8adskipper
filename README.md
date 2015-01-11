@@ -13,54 +13,34 @@ First download the m3u8 playlist using the m3u8downloader
 using the following
 
 ```javascript
-var m3u8downloader = require('m3u8downloader');
+'use strict';
 var m3u8adskipper = require('./');
-var downloader = new m3u8downloader(""http://www.nacentapps.com/m3u8/index.m3u8"", "destination",
-function(err, data)
+var skipper = new m3u8adskipper('./adestination/m3u8absolute/index.m3u8', 'output.mp4');
+
+skipper.run(function(err)
 {
-    if(err)
+    if (err)
+    {
         console.log(err);
+    }
     else
-        console.dir(data)
+    {
+        console.log('done');
+    }
 });
 
-downloader.on('start', function()
+skipper.on('error', function(err)
 {
-    console.log("started downloading");
+    console.error(err);
 });
 
-downloader.on('progress', function(d)
+skipper.on('progress', function(d)
 {
     console.log(d);
 });
 
-
-downloader.on('downloaded', function(d)
+skipper.on('complete', function()
 {
-    console.log(d);
-});
-
-
-downloader.on('complete', function(d)
-{
-    console.log('done');
-    var skipper = new m3u8adskipper('destination/m3u8absolute/index.m3u8',"output.mp4",
-    function(data,err)
-    {
-        if(err)
-            console.log(err);
-        else
-            console.log(data);
-    });
-
-    skipper.on('progress', function(d)
-    {
-        console.log(d);
-    });
-
-    skipper.on('complete', function(d)
-    {
-        console.log(d);
-    });
+    console.log('transmux complete');
 });
 ```
