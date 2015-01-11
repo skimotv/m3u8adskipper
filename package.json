@@ -1,11 +1,40 @@
 {
-    "name": "m3u8adskipper",
-    "description": "This Node module identifies ads in m3u8 HLS playlists and transmuxes the video into the mp4 container, skipping ads, without transcoding the content.",
-    "version": "0.1.0",
-    "private": true,
-    "main": "./lib/m3u8adskipper.js",
-    "dependencies": 
-    {
-        "fs": "latest"
-    }
+  "name": "m3u8adskipper",
+  "description": "This Node module identifies ads in m3u8 HLS playlists and transmuxes the video into the mp4 container, skipping ads, without transcoding the content",
+  "version": "0.2.0",
+  "private": false,
+  "main": "./lib/m3u8adskipper.js",
+  "dependencies": {
+    "async": "^0.9.0",
+    "request":"^2.51.0",
+    "fs": "latest",
+    "m3u8downloader": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skimotv/m3u8adskipper.git"
+  },
+  "keywords": [
+    "m3u8adskipper",
+    "HLS",
+    "hls",
+    "MBR",
+    "Apple",
+    "ad",
+    "ad skipper",
+    "ad skipping",
+    "EXT-X-DISCONTINUITY",
+    "transmuxer",
+    "transmux",
+    "SCTE 35"
+  ],
+  "author": "Skimo TV Inc.,",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skimotv/m3u8adskipper/issues"
+  },
+  "homepage": "https://github.com/skimotv/m3u8adskipper"
 }
